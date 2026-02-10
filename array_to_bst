@@ -1,0 +1,41 @@
+#include <stddef.h>
+#include <stdlib.h>
+
+typedef struct TreeNode{
+  struct TreeNode *left, *right;
+  int value;
+} TreeNode;
+
+
+TreeNode *array_to_tree(size_t l, const int arr[l]){
+  TreeNode *root = malloc(sizeof(TreeNode));
+  root->value = arr[0];
+  root->left = NULL;
+  root->right = NULL;
+
+  for(int a = 1;a < l;a++){
+     TreeNode *roots = root;
+
+     TreeNode *node = malloc(sizeof(TreeNode));
+     node->value = arr[a];
+     node->left = NULL;
+     node->right = NULL;
+
+     while(1){
+       if(arr[a] < roots->value){
+         if(roots->left == NULL){
+           roots->left = node;
+           break;
+         }
+         roots = roots->left;
+         continue;
+       }
+       if(roots->right == NULL){
+         roots->right = node;
+         break;
+       }
+       roots = roots->right;
+     }
+  }
+  return root;
+}

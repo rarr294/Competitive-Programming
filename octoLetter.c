@@ -29,7 +29,6 @@ Examples:
 "Can a can contain fish?" -> "Can ****n co*tain fish?"
 "Write 122 pages" -> "Write 122 pages"
 "8000 dollars went missing" -> "800* dollars went mis**ng"
-"             " -> "" (counts as empty file)
 
 */
 

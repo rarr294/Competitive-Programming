@@ -72,7 +72,7 @@ void circle_mender(char *c){
       continue;
     }
 
-    char *upBound = c += r_size;
+    char *upBound = (c += r_size) - 1;
     
     while(*upBound != 35){
       upBound--;

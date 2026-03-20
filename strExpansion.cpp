@@ -33,7 +33,7 @@ string string_expansion(const string& s){
   int size = s.size();
 
   while(a < size){
-      char present_number_flag = 0;
+     char present_number_flag = 0;
 
      while(s[a] >= 48 && s[a] <= 57){
         present_number_flag = 1;

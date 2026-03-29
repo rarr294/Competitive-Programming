@@ -2,7 +2,7 @@
 
 Description:
 Help a fruit packer sort out the bad apples.
-There are 7 varieties of apples, all packaged as pairs and stacked in a fruit box. 
+There are 9 varieties of apples, all packaged as pairs and stacked in a fruit box. 
 Some of the apples are spoiled. The fruit packer will have to make sure the spoiled 
 apples are either removed from the fruit box or replaced. Below is the breakdown:
 

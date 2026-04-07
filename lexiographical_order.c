@@ -1,3 +1,5 @@
+//low level version of lexiographical ordering
+
 #include <string.h>
 #include <stdint.h>
 #include <sys/mman.h>

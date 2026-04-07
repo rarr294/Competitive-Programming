@@ -29,7 +29,7 @@ void lexio_order(char* addr,int size){
         cp2++;
       }
 
-      if(((strlen(str1) > strlen(str2)) && notSame_flag == 0) || (*cp1 > *cp2)){
+      if(((strlen(str1) > strlen(str2)) && (notSame_flag == 0)) || (*cp1 > *cp2)){
          char *tmp = str1;
          *(uintptr_t*)(addr + sizeof(uintptr_t) * (b - 1)) = (uintptr_t)str2;
          *(uintptr_t*)(addr + sizeof(uintptr_t) * b) = (uintptr_t)tmp;

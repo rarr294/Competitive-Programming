@@ -1,8 +1,9 @@
-#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+
+//data example
 const char *s =
 "/+1-541-754-3010erd 156 Alphand_St. ard<J Steeve>\n"
 " 133, Green, Rd. <E Kustur> NY-56423 ;+1-541-914-3010\n"
@@ -37,6 +38,7 @@ const char *s =
 "<Colin Marshall> *+9-421-674-8974 Edinburgh UK\n <Bernard Povit> +3-498-512-2222; Hill Av.  Cameron\n"
 "+12-099-500-8000 <Pete Highman> Ontario Bd.\n +8-931-512-4855 <W Mount> Oxford Street CQ-23071\n"
 "<Donald Drinkaw> Moon Street, +3-098-512-2222, Peterville\n";
+//
 
 const char *not_found = "Error => Not found: ";
 const char *many = "Error => Too many people: ";
@@ -185,14 +187,3 @@ char *phone_directory(const char *p,const char *num){
   *(rest + offset - 1) = 0;
   return rest;
 }
-
-int main(){
-  const char *num1 = "1-541-914-3010";
-  const char *num2 = "+1-921-512-2222 <Wilfrid Stevens> Wild Street AA-67209\n";
-
-  char *rest = phone_directory(s,num1);
-  printf("%s\n",rest);
-}
-
-
-

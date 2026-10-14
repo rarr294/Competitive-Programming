@@ -63,17 +63,47 @@ char *code(const char *s){
 }
 
 char *decode(const char *s){
+  size_t n = 0;
+  size_t size = 0;
 
+  char fflag = 1;
+  for(size_t a = 0;*(s + a);a++){
+    ((*s == 11) || (*s == 10)) ? (fflag = 0) : (
+      (size++),
+      ((fflag) ? (n++) : (0))
+    );
+  }
+
+  uint64_t goff = 0;
+  uint64_t gcounter = 0;
+
+  char *rest = malloc(size + 1);
+
+  while(*s){
+
+    if(gcounter == size){
+      break;
+    }
+
+    while((*s != 11) && (*s != 10)){
+      s++;
+    }
+
+    const char *s_cp = s - 1;
+    for(size_t loff = 0;loff < size;loff += n){
+      (*s_cp == 11) ? (0) : (
+         gcounter++,
+         *(rest + loff + goff) = *(s_cp--)
+      );
+    }
+
+    goff++;
+    (*s) ? (s++) : (0);
+  }
+
+  *(rest + size) = 0;
+  return rest;
 }
-
-
-
-
-
-
-
-
-
 
 int main(){
   char *rest = code("I.was.going.fishing.that.morning.at.ten.o'clock");
@@ -84,20 +114,3 @@ int main(){
 
   printf("\n");
 };
-
-/*
-nmna
-yjcn
-qpwn
-burc
-
-bqyn
-upjm
-rwcn
-cnna
-
-bqyn
-upjm
-rwcn
-cnna
-*/
